@@ -8,22 +8,22 @@ CORS(app)
 @app.route("/", methods=['GET'])
 def load_user():
     datos =[
-        {'id':1,
-         'name':'Vrouqen',
-         'description':'Me gusta programar'
-         },
-         {'id':2,
-         'name':'Nico',
-         'description':'Hola'
-         },
-         {'id':3,
-         'name':'Bryan',
-         'description':'Hola como estás'
-         },
-         {'id':4,
-         'name':'Derek',
-         'description':'No confíen en mí'
-         }
+            {'id':1,
+            'name':'Vrouqen',
+            'description':'Me gusta programar'
+            },
+            {'id':2,
+            'name':'Nico',
+            'description':'Hola'
+            },
+            {'id':3,
+            'name':'Bryan',
+            'description':'Hola como estás'
+            },
+            {'id':4,
+            'name':'Derek',
+            'description':'No confíen en mí'
+            }
     ]
     return jsonify({'result':datos})
 
