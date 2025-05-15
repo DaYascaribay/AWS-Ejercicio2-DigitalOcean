@@ -13,7 +13,7 @@ def load_user():
     datos = [
         {'id': 1, 'name': 'Vrouqen', 'description': 'Me gusta programar'},
         {'id': 2, 'name': 'David', 'description': 'Hola'},
-        {'id': 3, 'name': 'Allan', 'description': 'Hola como estás'},
+        {'id': 3, 'name': 'Allan1', 'description': 'Hola como estás'},
         {'id': 4, 'name': 'Kevin', 'description': 'No confíen en mí'}
     ]
     return jsonify({'result': datos})
