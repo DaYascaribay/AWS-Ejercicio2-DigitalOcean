@@ -1,0 +1,127 @@
+/* Fuente general y colores */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezado */
+.header {
+  background-color: #dd5a5a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 36px;
+  margin: 0;
+}
+
+.slogan {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Sección de tipo de productos */
+.product-type {
+  text-align: center;
+  padding: 30px 15px 10px 15px;
+  background-color: #e7b0bf;
+}
+
+.product-type h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.product-type p {
+  font-size: 16px;
+}
+
+/* Lista de productos */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.price {
+  font-size: 16px;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #aa383d;
+  color: white;
+  font-size: 14px;
+}
+
+.nav {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 5px 50px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #eee;
+}
+
+.nav-list a.active {
+    background-color: #c0392b; /* rojo oscuro o el color de marca */
+    color: #fff;
+}
+
