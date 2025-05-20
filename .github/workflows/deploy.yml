@@ -23,6 +23,9 @@ jobs:
     - name: Deploy to Droplet
       run: |
         ssh root@146.190.160.148 << 'EOF'
+          # Añadir Docker al PATH
+          export PATH=$PATH:/usr/bin:/usr/local/bin
+
           # Ir a la carpeta del proyecto
           cd /root/AWS-Ejercicio2-DigitalOcean
 
