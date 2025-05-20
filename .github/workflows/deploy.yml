@@ -1,0 +1,41 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.DO_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H 146.190.160.148 >> ~/.ssh/known_hosts
+
+    - name: Deploy to Droplet
+      run: |
+        ssh root@146.190.160.148 << 'EOF'
+          # Ir a la carpeta del proyecto
+          cd /root/AWS-Ejercicio2-DigitalOcean
+
+          # Actualizar código
+          git pull origin main
+
+          # Detener y eliminar contenedor anterior (si existe)
+          docker stop mi_app || true
+          docker rm mi_app || true
+
+          # Construir imagen desde Dockerfile
+          docker build -t mi_app .
+
+          # Ejecutar contenedor en el puerto 999
+          docker run -d --name mi_app -p 999:999 mi_app
+        EOF
