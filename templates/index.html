@@ -1,0 +1,63 @@
+<!--  index.html  -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carnes – Catálogo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/pagina1.css') }}">
+
+
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="http://3.218.233.15:777/">Inicio</a></li>
+            <li><a href="https://herokud1-03800266aff2.herokuapp.com/">Lácteos</a></li>
+            <li><a href="http://146.190.160.148:999/" class="active">Carnes</a></li>
+            <li><a href="https://versel-cyan.vercel.app">Bebidas</a></li>
+            <li><a href="https://ejercicio2-railway.up.railway.app/">Limpieza</a></li>
+        </ul>
+    </nav>
+    <h1 class="logo">Carnes</h1>
+    <p class="slogan">Corte a corte, pasión por la carne</p>
+    </header>
+
+    <!-- Tipo de productos -->
+    <section class="product-type">
+        <h2>De campo, con alma. Carne artesanal.</h2>
+        <p>Carne tan fresca que casi te saluda, pero no te preocupes, ya está lista para la parrilla.</p>
+    </section>
+
+    <!-- Lista de productos -->
+    <main class="product-list">
+        <article class="product-card">
+            <img src="{{ url_for('static', filename='images/carne-de-res.png') }}" alt="Yogur natural 500 g" />
+            <h3>Costilla de Res 1kg</h3>
+            <p class="price">$ 4.59</p>
+        </article>
+
+        <article class="product-card">
+            <img src="{{ url_for('static', filename='images/pierna-de-res.png') }}" alt="Queso fresco 250 g" />
+            <h3>Pierna de res</h3>
+            <p class="price">$ 109.00</p>
+        </article>
+
+        <article class="product-card">
+            <img src="{{ url_for('static', filename='images/res-cruda.png') }}" alt="Leche entera 1 L" />
+            <h3>Bife de chorizo 1kg</h3>
+            <p class="price">$ 10.50</p>
+        </article>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2025&nbsp;Carnicos&nbsp;S.A. – Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
