@@ -1,3 +1,5 @@
+name: Deploy to DigitalOcean Droplet
+
 on:
   push:
     branches:
@@ -24,22 +26,25 @@ jobs:
     - name: Deploy to Droplet
       run: |
         ssh root@146.190.160.148 << 'EOF'
-          # Añadir Docker al PATH
-          export PATH=$PATH:/usr/bin:/usr/local/bin
+          set -e  # Detener el script si ocurre algún error
 
-          # Ir a la carpeta del proyecto
+          echo "🔍 Verificando Docker..."
+          docker --version || { echo "❌ Docker no está instalado"; exit 1; }
+
+          echo "📁 Entrando al proyecto..."
           cd /root/AWS-Ejercicio2-DigitalOcean
 
-          # Actualizar código
+          echo "🔄 Haciendo pull del repositorio..."
           git pull origin main
 
-          # Detener y eliminar contenedor anterior (si existe)
-          docker stop mi_app || true
-          docker rm mi_app || true
+          echo "🛑 Deteniendo y eliminando contenedor anterior..."
+          docker rm -f mi_app || true
 
-          # Construir imagen desde Dockerfile
+          echo "🐳 Construyendo imagen Docker..."
           docker build -t mi_app .
 
-          # Ejecutar contenedor en el puerto 999
+          echo "🚀 Ejecutando nuevo contenedor..."
           docker run -d --name mi_app -p 999:999 mi_app
+
+          echo "✅ Despliegue completado."
         EOF
