@@ -1,5 +1,3 @@
-This branch is 1 commit ahead of, 1 commit behind main.name: Deploy to DigitalOcean
-
 on:
   push:
     branches:
